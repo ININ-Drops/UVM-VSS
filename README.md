@@ -1,3 +1,3 @@
 This is a website about LGSDF
 
-link: https://lgsdf.github.io/
+link: https://inin-drops.github.io/UJM-VSS/
