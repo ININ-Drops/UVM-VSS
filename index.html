@@ -162,7 +162,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2406.08009"
+                <a href="https://arxiv.org/pdf/2412.07154"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -171,7 +171,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2406.08009"
+                <a href="https://arxiv.org/abs/2412.07154"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -191,7 +191,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/BIT-DYN/LGSDF"
+                <a href="https://github.com/lhlawrence/UVM-VSS"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -217,9 +217,9 @@
         }
       </style>
       <h2 class="title is-3">Poster</h2>
-      <img id="teaser" src="./static/images/poster.jpg" alt="teaser">
+      <img id="teaser" src="./static/images/poster.png" alt="teaser">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf"> LGSDF facilitates various downstream tasks. </span>
+        <span class="UVM-VSS"> UVM-VSS utilizing real-world data. </span>
       </h2>
     </div>
   </div>
@@ -247,20 +247,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p style="text-indent: 2em;">
-            In recent years, there has been a surge of interest in open-vocabulary 3D scene reconstruction 
-            facilitated by visual language models (VLMs), which showcase remarkable capabilities in open-set 
-            retrieval. However, existing methods face some limitations: they either focus on learning point-wise 
-            features, resulting in blurry semantic understanding, or solely tackle object-level reconstruction, 
-            thereby overlooking the intricate details of the object's interior.
-            To address these challenges, we introduce LGSDF, an innovative approach to build open-vocabulary 
-            object-level Neural Radiance Fields (NeRF) with fine-grained understanding. In essence, LGSDF 
-            establishes a robust framework for efficient and watertight scene modeling and comprehension at 
-            the object-level. Moreover, we incorporate part-level features into the neural fields, enabling a 
-            nuanced representation of object interiors. This approach clearly captures object-level instances 
-            while maintaining a fine-grained understanding.
-            The results on multiple datasets demonstrate that LGSDF achieves superior performance in zero-shot 
-            semantic segmentation and retrieval tasks. Additionally, LGSDF supports real-world robotics tasks 
-            at multiple scales, including global mobility and local manipulation.
+            Tractor-trailer wheeled robots need to perform comprehensive perception tasks 
+            to enhance their operations in areas such as logistics parks and long-haul transportation. 
+            The perception of these robots face three major challenges: the relative pose change between 
+            the tractor and trailer, the asynchronous vibrations between the tractor and trailer, and the 
+            significant camera parallax caused by the large size. In this paper, we propose a novel Unified 
+            Vertex Motion Video Stabilization and Stitching framework designed for unknown environments. To 
+            establish the relationship between stabilization and stitching, the proposed Unified Vertex Motion 
+            framework comprises the Stitching Motion Field, which addresses relative positional change, and the 
+            Stabilization Motion Field, which tackles asynchronous vibrations. Then, recognizing the heterogeneity 
+            of optimization functions required for stabilization and stitching, a weighted cost function approach 
+            is proposed to address the problem of camera parallax. Furthermore, this framework has been successfully 
+            implemented in real tractor-trailer wheeled robots. The proposed Unified Vertex Motion Video Stabilization 
+            and Stitching method has been thoroughly tested in various challenging scenarios, demonstrating its accuracy 
+            and practicality in real-world robot tasks.
           </p>
         </div>
       </div>
@@ -280,17 +280,19 @@
       <h2 class="title is-3">Framework</h2>
       <div class="content has-text-justified">
         <p style="text-indent: 2em;">
-        First, the Object Segmentation and Understanding module identifies and 
-        comprehends object instances from color images. Then, Mask Clustering module 
-        ensures consistent object association across frames. Next, the Part-level Fine-Grained 
-        Feature Extraction module leverages the dense segmentation capability of 
-        SAM to distinguish parts and extracts their visual features using VLMs. Finally,
-         the NeRF Rendering and Training module vectorizes the training of NeRFs for all 
-         objects based on the masks, input RGBD images, and dense VLM features, enabling it 
-         to learn detailed object properties.
+          In the initial phase, camera units installed on both the tractor and the 
+          trailer undergo separate pre-calibration and individual stitching procedures 
+          to produce two partial surround views of the vehicle. Specifically, one partial 
+          surround view is constructed from the tractor-mounted camera, while the other is 
+          generated from the trailer-mounted camera.Following this, feature matching is employed 
+          to establish intra and inter-motions, thus forming a Unified Joint Motion, which serves 
+          to harmonize the motion associated with both stabilization and stitching. Then, the unified 
+          optimization process is aimed at mitigating temporal instability within the intra-frames of 
+          each camera and aligning the inter-frames between the two adjacent partial surround views. 
+          Lastly, the panoramic video is artfully crafted through mesh warping methods
         </p>
       </div>
-      <img id="teaser" src="./static/images/framework.jpg" alt="teaser">
+      <img id="teaser" src="./static/images/pipeline.png" alt="teaser">
     </div>
   </div>
 </section>
@@ -514,11 +516,14 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{deng2024LGSDF,
-      title={LGSDF: Open-Vocabulary Object-Level Neural Radiance Fields with Fine-Grained Understanding}, 
-      author={Deng, Yinan and Wang, Jiahui and Zhao, Jingyu and Dou, Jianyu and Yang, Yi and Yue, Yufeng},
-      journal={arXiv preprint arXiv:2406.08009},
-      year={2024}
+    <pre><code>@article{UVM-VSS,
+      title={Unified Vertex Motion Estimation for Integrated Video Stabilization and Stitching in Tractor-Trailer Wheeled Robots}, 
+      author={Hao Liang and Zhipeng Dong and Hao Li and Yufeng Yue and Mengyin Fu and Yi Yang},
+      year={2024},
+      eprint={2412.07154},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2412.07154}, 
     }</code></pre>
   </div>
 </section>
